@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Download Tools</title>
+<link href='/assests/images/favicon.ico' rel='icon' type='image/x-icon'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #0d5302;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #0d5302;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+</style>
+<script type=”text/JavaScript”>
+        function killCopy(e){ 
+            return false } 
+        function reEnable(){ 
+            return true } 
+        document.onselectstart = new Function (“return false”) 
+        
+        if (window.sidebar){  
+            document.onmousedown=killCopy 
+            document.onclick=reEnable 
+        }
+</script>
+<script language="JavaScript">
+    window.onload = function() {
+        document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        }, false);
+        document.addEventListener("keydown", function(e) {
+            //document.onkeydown = function(e) {
+            // "I" key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                disabledEvent(e);
+            }
+            // "J" key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                disabledEvent(e);
+            }
+            // "S" key + macOS
+            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                disabledEvent(e);
+            }
+            // "U" key
+            if (e.ctrlKey && e.keyCode == 85) {
+                disabledEvent(e);
+            }
+            // "F12" key
+            if (event.keyCode == 123) {
+                disabledEvent(e);
+            }
+        }, false);
+ 
+        function disabledEvent(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            } else if (window.event) {
+                window.event.cancelBubble = true;
+            }
+            e.preventDefault();
+            return false;
+        }
+    };
+</script>
+</head>
+<body>
+<header>
+  <h2><a href="https://thanhphatit.github.io/">Download Tools</a></h2>
+</header>
+<section>
+  <nav>
+    <ul>
+      <li><button class="btn btn-success btn-lg" onclick="openCity(event, 'tab1')" style="width:90%">Extension For Chrome</button></li>
+	  <br>
+      <li><button class="btn btn-primary btn-lg" onclick="openCity(event, 'tab2')" style="width:90%">NodeJS Source</button></li>
+	  <br>
+      <li><button class="btn btn-warning btn-lg" onclick="openCity(event, 'tab3')" style="width:90%">ImageMagick Source</button></li>
+	  <br>
+	  <li><button class="btn btn-danger btn-lg" onclick="openCity(event, 'tab4')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-info btn-lg" onclick="openCity(event, 'tab5')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-success btn-lg" onclick="openCity(event, 'tab6')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-primary btn-lg" onclick="openCity(event, 'tab7')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-warning btn-lg" onclick="openCity(event, 'tab8')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-danger btn-lg" onclick="openCity(event, 'tab9')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-info btn-lg" onclick="openCity(event, 'tab10')" style="width:90%">#</button></li>
+	  <br>
+	  <li><button class="btn btn-success btn-lg" onclick="openCity(event, 'tab11')" style="width:90%">#</button></li>
+    </ul>
+  </nav>
+  
+  <article>
+	<div id="hide">
+		<h3>Giới Thiệu</h3>
+		<p>Thành Phát IT</p>
+		<p>Facebook: <a href="https://www.facebook.com/thanhphatit">Link</a></p>
+		<p>Blog: <a href="https://www.itblognote.com/">Link</a></p>
+	</div>
+	
+	<div id="tab1" class="tabcontent">
+		<h3>Extension For Chrome</h3>
+		<b>ID Extension:</b><br><input type="text" name="googlepdfurl" style="width:100%" id="IDExtension"><br/>
+		<b>Version Chrome:</b><br><input type="text" name="bloggerpdfurl" style="width:100%" id="VersionChrome">
+		<br/><br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center" onclick="GetExtension()">DOWNLOAD</button>
+		<span><button type="button" class="btn btn-link btn-lg" style="text-align:center"><a href="guide-extens-chrome.html">GUIDE</a></button></span>
+	</div>
+
+	<div id="tab2" class="tabcontent">
+		<h3>NodeJS Source</h3>
+		<b>Version NodeJS:</b><br><input type="text" name="imageurl" style="width:100%" id="VersionNodeJS"><br/>
+		<br/>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center" onclick="ShowNodeJS()">SHOW</button>
+		<br>
+		<br>
+		<iframe height="550px" width="100%" src="" id="showversionnodejs"></iframe>
+	</div>
+
+	<div id="tab3" class="tabcontent">
+		<h3>ImageMagick Source</h3>
+		<iframe height="550px" width="100%" src="https://imagemagick.org/download/" id="showimagemagick"></iframe>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center" onclick="ShowImageMagicK()">Delegates</button>
+	</div>
+	
+	<div id="tab4" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab5" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab6" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab7" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab8" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab9" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab10" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+	
+	<div id="tab11" class="tabcontent">
+		<h3>#</h3>
+		<b>#:</b><br><input type="text" name="imageurl" style="width:100%"><br/>
+		<b>#:</b><br><input type="text" name="bloggerhideurl" style="width:100%">
+		<br/>
+		<br>
+		<button type="button" class="btn btn-success btn-lg" style="text-align:center">COPY</button>
+	</div>
+  </article>
+</section>
+
+<footer>
+  <p>Copyright @ <script>document.write(new Date().getFullYear())</script> by ThanhPhat IT</p>
+</footer>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  hide.style.display="none";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+function GetExtension() {
+  var IDETS = document.getElementById("IDExtension").value;
+  var VerSChrome = document.getElementById("VersionChrome").value;
+  if(IDETS=="" || VerSChrome=="")
+  {
+	alert("Textbox is empty");
+  }
+  else
+  {
+	window.location='https://clients2.google.com/service/update2/crx?response=redirect&prodversion='+VerSChrome+'&acceptformat=crx2,crx3&x=id%3D'+IDETS+'%26uc'
+  }
+}
+function ShowNodeJS() {
+  var VersionNode = document.getElementById("VersionNodeJS").value;
+  if(VersionNode=="")
+  {
+	alert("Textbox is empty");
+  }
+  else
+  {
+	document.getElementById("showversionnodejs").src='https://deb.nodesource.com/node_'+VersionNode+'.x/pool/main/n/nodejs/';
+  }
+}
+function ShowImageMagicK() {
+  document.getElementById("showimagemagick").src='https://www.imagemagick.org/download/delegates/';
+}
+</script>
+</body>
+</html>
