@@ -1,2 +1,1 @@
-# thanhphatit.github.io
-Tools Blog
+# Tools Blog
